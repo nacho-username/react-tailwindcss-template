@@ -4,6 +4,7 @@ module.exports = {
     colors: {
       orange: '#f17147',
       blue: '#263d4c',
+      lightgray: '#bbbbbb',
     },
     extend: {
       fontFamily: {

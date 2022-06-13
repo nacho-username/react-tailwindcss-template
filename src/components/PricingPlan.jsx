@@ -1,4 +1,9 @@
+import { useContext } from 'react'
+import TotalPriceContext from '../context/TotalPriceContext'
+
 function PricingPlan() {
+  const { price } = useContext(TotalPriceContext)
+
   return (
     <div className='flex gap-12 mt-8'>
       <div className='flex-1 rounded-3xl shadow-lg p-8'>
@@ -9,9 +14,9 @@ function PricingPlan() {
           id='annualPrice'
           className='text-4xl font-Lato text-blue font-bold mt-3'
         >
-          £0.00{' '}
+          £0.00
           <span className='text-xs uppercase font-light text-blue'>
-            /monthly
+            /{price.plan.toUpperCase()}
           </span>
         </div>
         <div className='text-xs text-blue mt-4 font-light'>
@@ -27,7 +32,10 @@ function PricingPlan() {
           Inn Style Member
         </div>
         <div id='monthlyPrice' className='text-4xl font-Lato font-bold mt-4'>
-          £19.95 <span className='text-xs uppercase font-light'>/monthly</span>
+          £{price.totalPrice}
+          <span className='text-xs uppercase font-light'>
+            /{price.plan.toUpperCase()}
+          </span>
         </div>
         <div className='text-xs text-white mt-4 font-light'>
           A 14 day free trial grants you access to ALL of our direct bookings

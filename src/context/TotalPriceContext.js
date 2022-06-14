@@ -42,11 +42,9 @@ export const PricingProvider = ({ children }) => {
     }
 
     setPricePackage(updPrice)
-    console.log(updPrice)
+    console.log(pricePackage)
     updateTotalPrice(pricePackage.numRooms)
   }
-
-  // console.log(price)
 
   return (
     <TotalPriceContext.Provider

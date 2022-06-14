@@ -1,4 +1,16 @@
+import { useState, useContext } from 'react'
+import TotalPriceContext from '../context/TotalPriceContext'
+
 function Header() {
+  const { pricePackage, updatePlan } = useContext(TotalPriceContext)
+
+  const [plan, setplan] = useState(pricePackage.plan)
+
+  const handleChange = (e) => {
+    setplan(e.target.value)
+    updatePlan(e.target.value)
+  }
+
   return (
     <div className='grid sm:grid-cols-2 md:grid-cols-3 gap-2 my-8'>
       <div className='col-span-2'>
@@ -15,9 +27,11 @@ function Header() {
               <input
                 id='plan-monthly'
                 type='radio'
-                name='plan-radio'
+                name='monthly'
                 className='radio checked:bg-red-500'
-                checked
+                value='monthly'
+                checked={plan === 'monthly'}
+                onChange={handleChange}
               />
             </label>
           </div>
@@ -29,8 +43,11 @@ function Header() {
               <input
                 id='plan-annually'
                 type='radio'
-                name='plan-radio'
+                name='annually'
                 className='radio checked:bg-blue-500'
+                checked={plan === 'annually'}
+                value='annually'
+                onChange={handleChange}
               />
             </label>
           </div>

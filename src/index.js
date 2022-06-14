@@ -8,13 +8,11 @@ import { PricingProvider } from './context/TotalPriceContext'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
-  <React.StrictMode>
-    <PricingProvider>
-      <Router>
-        <Routes>
-          <Route path='/' element={<App />} />
-        </Routes>
-      </Router>
-    </PricingProvider>
-  </React.StrictMode>
+  <PricingProvider>
+    <Router>
+      <Routes>
+        <Route path='/' element={<App />} />
+      </Routes>
+    </Router>
+  </PricingProvider>
 )

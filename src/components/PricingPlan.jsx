@@ -2,11 +2,11 @@ import { useContext, useEffect, useState } from 'react'
 import TotalPriceContext from '../context/TotalPriceContext'
 
 function PricingPlan() {
-  const { price } = useContext(TotalPriceContext)
+  const { pricePackage } = useContext(TotalPriceContext)
 
   useEffect(() => {
-    setTotalPrice(price.totalPrice)
-  }, [price])
+    setTotalPrice(pricePackage.totalPrice)
+  }, [pricePackage])
 
   const [totalPrice, setTotalPrice] = useState()
 
@@ -22,7 +22,7 @@ function PricingPlan() {
         >
           £0.00
           <span className='text-xs uppercase font-light text-blue'>
-            /{price.plan.toUpperCase()}
+            /{pricePackage.plan.toUpperCase()}
           </span>
         </div>
         <div className='text-xs text-blue mt-4 font-light'>
@@ -40,7 +40,7 @@ function PricingPlan() {
         <div id='monthlyPrice' className='text-4xl font-Lato font-bold mt-4'>
           £{totalPrice}
           <span className='text-xs uppercase font-light'>
-            /{price.plan.toUpperCase()}
+            /{pricePackage.plan.toUpperCase()}
           </span>
         </div>
         <div className='text-xs text-white mt-4 font-light'>

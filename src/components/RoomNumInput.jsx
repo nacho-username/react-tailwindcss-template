@@ -2,13 +2,13 @@ import { useContext, useState } from 'react'
 import TotalPriceContext from '../context/TotalPriceContext'
 
 function RoomNumInput() {
-  const { updatePricing } = useContext(TotalPriceContext)
-  const [roomNum, setRoomNum] = useState(1)
+  const { pricePackage, updateRoomCount } = useContext(TotalPriceContext)
+  const [roomNum, setRoomNum] = useState(pricePackage.numRooms)
 
   const handleInputChange = (e) => {
-    setRoomNum(e.target.value)
-
-    updatePricing({ numRooms: e.target.value })
+    const updRoomNum = parseInt(e.target.value)
+    setRoomNum(updRoomNum)
+    updateRoomCount(updRoomNum)
   }
 
   return (
@@ -24,6 +24,9 @@ function RoomNumInput() {
           onChange={handleInputChange}
           value={roomNum}
           type='number'
+          step={1}
+          min={1}
+          max={40}
           className='input input-bordered w-16 px-2'
         />
         <span className='label-text ml-2'>Rooms</span>

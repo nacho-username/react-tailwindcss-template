@@ -10,8 +10,14 @@ export const PricingProvider = ({ children }) => {
     totalPrice: 19.95,
   })
 
+  const updatePricing = (updPrice) => {
+    console.log(updPrice)
+    // setPrice((price[updPrice] = updPrice))
+    console.log(price)
+  }
+
   return (
-    <TotalPriceContext.Provider value={{ price }}>
+    <TotalPriceContext.Provider value={{ price, updatePricing }}>
       {children}
     </TotalPriceContext.Provider>
   )

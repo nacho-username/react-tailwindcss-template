@@ -1,4 +1,16 @@
+import { useContext, useState } from 'react'
+import TotalPriceContext from '../context/TotalPriceContext'
+
 function RoomNumInput() {
+  const { updatePricing } = useContext(TotalPriceContext)
+  const [roomNum, setRoomNum] = useState(1)
+
+  const handleInputChange = (e) => {
+    setRoomNum(e.target.value)
+
+    updatePricing({ numRooms: e.target.value })
+  }
+
   return (
     <div className='flex justify-center'>
       {/* <label className='input-group'>
@@ -8,7 +20,12 @@ function RoomNumInput() {
       </label> */}
       <label className='label'>
         <span className='label-text mr-2'>I have</span>
-        <input type='number' className='input input-bordered w-16 px-2' />
+        <input
+          onChange={handleInputChange}
+          value={roomNum}
+          type='number'
+          className='input input-bordered w-16 px-2'
+        />
         <span className='label-text ml-2'>Rooms</span>
       </label>
     </div>

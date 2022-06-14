@@ -1,8 +1,14 @@
-import { useContext } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import TotalPriceContext from '../context/TotalPriceContext'
 
 function PricingPlan() {
   const { price } = useContext(TotalPriceContext)
+
+  useEffect(() => {
+    setTotalPrice(price.totalPrice)
+  }, [price])
+
+  const [totalPrice, setTotalPrice] = useState()
 
   return (
     <div className='flex gap-12 mt-8'>
@@ -32,7 +38,7 @@ function PricingPlan() {
           Inn Style Member
         </div>
         <div id='monthlyPrice' className='text-4xl font-Lato font-bold mt-4'>
-          £{price.totalPrice}
+          £{totalPrice}
           <span className='text-xs uppercase font-light'>
             /{price.plan.toUpperCase()}
           </span>

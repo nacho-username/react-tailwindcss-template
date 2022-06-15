@@ -3,15 +3,13 @@ import TotalPriceContext from '../context/TotalPriceContext'
 import { roundToTwo } from '../utilities/helpers'
 
 function PricingPlan() {
-  const { pricePackage, updatePricePackage } = useContext(TotalPriceContext)
+  const { pricePackage } = useContext(TotalPriceContext)
   const [totalPrice, setTotalPrice] = useState(pricePackage.totalPrice)
 
   useEffect(() => {
     if (pricePackage.plan === 'annually') {
-      console.log('Inside')
       const annualPrice = roundToTwo(pricePackage.totalPrice * 12)
       setTotalPrice(annualPrice)
-      console.log(annualPrice)
     } else {
       setTotalPrice(pricePackage.totalPrice)
     }

@@ -1,6 +1,8 @@
 import { useContext, useEffect, useState } from 'react'
 import TotalPriceContext from '../context/TotalPriceContext'
-import { roundToTwo } from '../utilities/helpers'
+
+// components
+import { CheckIcon, CrossIcon } from './shared/CheckIcon'
 
 function PricingPlan() {
   const { pricePackage } = useContext(TotalPriceContext)
@@ -38,45 +40,45 @@ function PricingPlan() {
           A 14 day free trial grants you access to ALL of our direct bookings
           PMS features. No credit card details required for sign up!
         </div>
-        <div className='text-sm text-bold text-blue mt-4 font-normal'>
+        <div className='text-sm text-bold text-blue mt-4 mb-8 font-normal'>
           Features Tailored to BnB / Guesthouse
         </div>
-        <div className='text-sm'>
-          <ul class='w-full rounded-lg mt-2 mb-3 text-blue-800'>
-            <li class='flex my-2'>
-              <svg
-                xmlns='http://www.w3.org/2000/svg'
-                className='h-5 w-5'
-                viewBox='0 0 20 20'
-                fill='currentColor'
-              >
-                <path
-                  fillRule='evenodd'
-                  d='M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z'
-                  clipRule='evenodd'
-                />
-              </svg>
-              Third-party channel connections
-            </li>
-            <li class='flex my-2'>
-              <svg
-                xmlns='http://www.w3.org/2000/svg'
-                className='h-5 w-5'
-                viewBox='0 0 20 20'
-                fill='currentColor'
-              >
-                <path
-                  fillRule='evenodd'
-                  d='M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z'
-                  clipRule='evenodd'
-                />
-              </svg>
-              Unrivalled customer support
-            </li>
-          </ul>
+        <ul class=' flex flex-col space-y-5 w-full text-sm rounded-lg mt-2 mb-6 text-secondary'>
+          <li class='flex mt-2 text-secondary'>
+            <CrossIcon
+              classes='text-lightgray mr-1'
+              label='Third-party channel connections'
+            />
+          </li>
+          <li class='flex my-2'>
+            <CheckIcon
+              classes='text-primary mr-1'
+              label='Unrivalled customer support'
+            />
+          </li>
+          <li class='flex my-2'>
+            <CheckIcon
+              classes='text-primary mr-1'
+              label='0% commission on OTA bookings'
+            />
+          </li>
+          <li class='flex my-2'>
+            <CheckIcon classes='text-primary mr-1' label='Unlimited users' />
+          </li>
+        </ul>
+        <a href='#' className='text-2xs text-lightgray underline'>
+          See All Features
+        </a>
+        <div className='grid place-items-center my-10'>
+          <button className='py-4 px-8 text-sm bg-gray-100 text-primary rounded-full'>
+            Start your 14 day free trial
+          </button>
+        </div>
+        <div className='text-2xs text-center italic text-lightgray'>
+          Prices displayed are in GBP and exclude VAT
         </div>
       </div>
-      <div className='basis-96 bg-gradient-to-r from-primary to-rose-400 p-8 rounded-xl !text-white shadow-lg'>
+      <div className='basis-96 bg-gradient-to-r from-orange-400 to-primary p-8 rounded-xl !text-white shadow-lg'>
         <div className='rounded-full bg-gray-200 uppercase text-primary text-xs px-3 py-1 inline'>
           Inn Style Member
         </div>
@@ -90,8 +92,42 @@ function PricingPlan() {
           A 14 day free trial grants you access to ALL of our direct bookings
           PMS features. No credit card details required for sign up!
         </div>
-        <div className='text-sm text-bold text-white mt-4 font-normal'>
+        <div className='text-sm text-bold text-white mt-4 mb-8 font-normal'>
           Features Tailored to BnB / Guesthouse
+        </div>
+        <ul class=' flex flex-col space-y-5 w-full text-sm rounded-lg mt-2 mb-6 text-white'>
+          <li class='flex mt-2 text-white'>
+            <CheckIcon
+              classes='text-white mr-1'
+              label='Premium features (Full Access)'
+            />
+          </li>
+          <li class='flex my-2'>
+            <CheckIcon
+              classes='text-white mr-1'
+              label='Unrivalled customer support'
+            />
+          </li>
+          <li class='flex my-2'>
+            <CheckIcon
+              classes='text-white mr-1'
+              label='0% commission on OTA bookings'
+            />
+          </li>
+          <li class='flex my-2'>
+            <CheckIcon classes='text-white mr-1' label='Unlimited users' />
+          </li>
+        </ul>
+        <a href='#' className='block text-2xs text-white underline'>
+          See All Features
+        </a>
+        <div className='grid place-items-center my-10'>
+          <button className='py-4 px-8 text-sm bg-gray-100 text-primary rounded-full'>
+            Join The Inn Style Family
+          </button>
+        </div>
+        <div className='text-2xs text-center italic text-white'>
+          Prices displayed are in GBP and exclude VAT
         </div>
       </div>
     </div>

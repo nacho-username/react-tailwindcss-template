@@ -22,8 +22,8 @@ function PricingPlan() {
   }, [pricePackage, totalPrice])
 
   return (
-    <div className='flex gap-24 mt-8 justify-center'>
-      <div className='basis-96 rounded-xl shadow-lg p-8'>
+    <div className='flex flex-col-reverse gap-8 mt-8 justify-center mx-12 sm:mx-2 sm:flex-row md:gap-24'>
+      <div className='sm:basis-96 rounded-xl shadow-lg p-8'>
         <div className='rounded-full bg-gray-200 uppercase text-primary text-xs px-3 py-1 inline'>
           14 day free trial
         </div>
@@ -36,11 +36,11 @@ function PricingPlan() {
             /{pricePackage.plan.toUpperCase()}
           </span>
         </div>
-        <div className='text-2xs text-blue mt-4 font-light'>
+        <div className='text-2xs text-lightgray my-8 font-light'>
           A 14 day free trial grants you access to ALL of our direct bookings
           PMS features. No credit card details required for sign up!
         </div>
-        <div className='text-sm text-bold text-blue mt-4 mb-8 font-normal'>
+        <div className='text-sm text-bold text-lightgray mt-4 mb-8 italic'>
           Features Tailored to BnB / Guesthouse
         </div>
         <ul class=' flex flex-col space-y-5 w-full text-sm rounded-lg mt-2 mb-6 text-secondary'>
@@ -78,7 +78,7 @@ function PricingPlan() {
           Prices displayed are in GBP and exclude VAT
         </div>
       </div>
-      <div className='basis-96 bg-gradient-to-r from-orange-400 to-primary p-8 rounded-xl !text-white shadow-lg'>
+      <div className='sm:basis-96 bg-gradient-to-r from-orange-400 to-primary p-8 rounded-xl !text-white shadow-lg'>
         <div className='rounded-full bg-gray-200 uppercase text-primary text-xs px-3 py-1 inline'>
           Inn Style Member
         </div>
@@ -88,11 +88,11 @@ function PricingPlan() {
             /{pricePackage.plan.toUpperCase()}
           </span>
         </div>
-        <div className='text-2xs text-white mt-4 font-light'>
+        <div className='text-2xs text-white my-8 font-light'>
           A 14 day free trial grants you access to ALL of our direct bookings
           PMS features. No credit card details required for sign up!
         </div>
-        <div className='text-sm text-bold text-white mt-4 mb-8 font-normal'>
+        <div className='text-sm text-bold text-white mt-4 mb-8 italic'>
           Features Tailored to BnB / Guesthouse
         </div>
         <ul class=' flex flex-col space-y-5 w-full text-sm rounded-lg mt-2 mb-6 text-white'>

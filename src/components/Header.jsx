@@ -25,12 +25,18 @@ function Header() {
         <div>
           <div className='form-control'>
             <label className='label cursor-pointer justify-end'>
-              <span className='label-text mr-4'>Pay Monthly</span>
+              <span
+                className={`label-text mr-4 ${
+                  plan === 'monthly' ? 'text-secondary' : 'text-lightgray'
+                }`}
+              >
+                Pay Monthly
+              </span>
               <input
                 id='plan-monthly'
                 type='radio'
                 name='monthly'
-                className='radio checked:bg-red-500'
+                className='radio checked:bg-primary'
                 value='monthly'
                 checked={plan === 'monthly'}
                 onChange={handleChange}
@@ -41,7 +47,7 @@ function Header() {
             <label className='label cursor-pointer justify-end'>
               <span
                 className={`label-text mr-4 ${
-                  plan === 'monthly' ? 'text-lightgray' : 'text-secondary'
+                  plan === 'annually' ? 'text-secondary' : 'text-lightgray'
                 }`}
               >
                 Pay Annually (Save 10%)
@@ -52,7 +58,7 @@ function Header() {
                 name='annually'
                 className={`radio ${
                   plan === 'annually'
-                    ? 'checked:primary'
+                    ? 'checked:bg-primary'
                     : 'checked:bg-gray-400'
                 }`}
                 checked={plan === 'annually'}

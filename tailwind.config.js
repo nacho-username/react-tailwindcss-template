@@ -8,6 +8,8 @@ module.exports = {
         Yeseva: ['Yeseva One', 'cursive'],
       },
       colors: {
+        primary: '#f17147',
+        secondary: '#263d4c',
         orange: '#f17147',
         blue: '#263d4c',
         lightgray: '#bbbbbb',

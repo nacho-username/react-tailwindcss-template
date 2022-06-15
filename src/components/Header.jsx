@@ -39,14 +39,22 @@ function Header() {
           </div>
           <div className='form-control'>
             <label className='label cursor-pointer justify-end'>
-              <span className='label-text mr-4 text-lightgray'>
+              <span
+                className={`label-text mr-4 ${
+                  plan === 'monthly' ? 'text-lightgray' : 'text-secondary'
+                }`}
+              >
                 Pay Annually (Save 10%)
               </span>
               <input
                 id='plan-annually'
                 type='radio'
                 name='annually'
-                className='radio checked:bg-blue-500'
+                className={`radio ${
+                  plan === 'annually'
+                    ? 'checked:primary'
+                    : 'checked:bg-gray-400'
+                }`}
                 checked={plan === 'annually'}
                 value='annually'
                 onChange={handleChange}

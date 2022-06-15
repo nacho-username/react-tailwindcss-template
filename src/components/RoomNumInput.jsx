@@ -12,20 +12,49 @@ function RoomNumInput() {
     })
   }
 
+  const handlePlus = () => {
+    if (roomNum >= 1 && roomNum <= 40) {
+      setRoomNum(roomNum + 1)
+      updatePricePackage({
+        numRooms: roomNum + 1,
+      })
+    }
+  }
+
+  const handleMinus = () => {
+    if (roomNum >= 1 && roomNum <= 40) {
+      setRoomNum(roomNum - 1)
+      updatePricePackage({
+        numRooms: roomNum - 1,
+      })
+    }
+  }
+
   return (
     <div className='flex justify-center'>
       <label className='label'>
-        <span className='label-text mr-2'>I have</span>
-        <input
+        <span className='label-text mr-2 text-lightgray'>I have</span>
+        <div className='flex align-middle py-3 px-6 border text-primary border-lightgray rounded-full'>
+          <div onClick={handlePlus} className='text-md mr-2 cursor-pointer'>
+            +
+          </div>
+          <div onChange={handleChange} className='text-sm px-4 '>
+            {roomNum}
+          </div>
+          {/* <input
           onChange={handleChange}
           value={roomNum}
           type='number'
           step={1}
           min={1}
           max={40}
-          className='input input-bordered w-16 px-2'
-        />
-        <span className='label-text ml-2'>Rooms</span>
+          className='input w-16 appearance-none'
+        /> */}
+          <div onClick={handleMinus} className='text-md ml-2 cursor-pointer'>
+            -
+          </div>
+        </div>
+        <span className='label-text ml-2 text-lightgray'>Rooms</span>
       </label>
     </div>
   )

@@ -1,4 +1,4 @@
-import { useState, useContext, useEffect } from 'react'
+import { useState, useContext } from 'react'
 import TotalPriceContext from '../context/TotalPriceContext'
 
 function Header() {
@@ -19,7 +19,9 @@ function Header() {
         <h4 className='text-primary text-lg font-Lato font-light uppercase'>
           Pricing Plans
         </h4>
-        <h1 className='text-blue text-6xl font-Yeseva'>Hello Affordable.</h1>
+        <h1 className='text-secondary text-6xl font-Yeseva'>
+          Hello Affordable.
+        </h1>
       </div>
       <div className=''>
         <div>

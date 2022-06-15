@@ -13,7 +13,7 @@ function RoomNumInput() {
   }
 
   const handlePlus = () => {
-    if (roomNum >= 1 && roomNum <= 40) {
+    if (roomNum < 39) {
       setRoomNum(roomNum + 1)
       updatePricePackage({
         numRooms: roomNum + 1,
@@ -22,7 +22,7 @@ function RoomNumInput() {
   }
 
   const handleMinus = () => {
-    if (roomNum >= 1 && roomNum <= 40) {
+    if (roomNum > 1) {
       setRoomNum(roomNum - 1)
       updatePricePackage({
         numRooms: roomNum - 1,
@@ -41,15 +41,6 @@ function RoomNumInput() {
           <div onChange={handleChange} className='text-sm px-4 '>
             {roomNum}
           </div>
-          {/* <input
-          onChange={handleChange}
-          value={roomNum}
-          type='number'
-          step={1}
-          min={1}
-          max={40}
-          className='input w-16 appearance-none'
-        /> */}
           <div onClick={handleMinus} className='text-md ml-2 cursor-pointer'>
             -
           </div>

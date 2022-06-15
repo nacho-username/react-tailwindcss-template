@@ -1,14 +1,16 @@
-import { useState, useContext } from 'react'
+import { useState, useContext, useEffect } from 'react'
 import TotalPriceContext from '../context/TotalPriceContext'
 
 function Header() {
-  const { pricePackage, updatePlan } = useContext(TotalPriceContext)
+  const { pricePackage, updatePricePackage } = useContext(TotalPriceContext)
 
   const [plan, setplan] = useState(pricePackage.plan)
 
   const handleChange = (e) => {
     setplan(e.target.value)
-    updatePlan(e.target.value)
+    updatePricePackage({
+      plan: e.target.value,
+    })
   }
 
   return (

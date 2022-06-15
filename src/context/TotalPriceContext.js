@@ -11,45 +11,51 @@ export const PricingProvider = ({ children }) => {
     totalPrice: '19.95',
   })
 
-  const updateRoomCount = (updRoomCount) => {
-    const updPrice = {
+  const updatePricePackage = (updPackage) => {
+    const newPricePackage = {
       ...pricePackage,
-      numRooms: updRoomCount,
+      ...updPackage,
     }
-
-    setPricePackage(updPrice)
-    updateTotalPrice(updRoomCount)
+    setPricePackage(newPricePackage)
   }
 
-  const updateTotalPrice = (roomCount) => {
-    const newTotalPrice = parseFloat(roomPricing[roomCount - 1].price).toFixed(
-      2
-    )
-    if (roomCount <= 40) {
-      const updTotalPrice = {
-        ...pricePackage,
-        totalPrice: newTotalPrice,
-      }
+  // const updateRoomCount = (updRoomCount) => {
+  //   const updPrice = {
+  //     ...pricePackage,
+  //     numRooms: updRoomCount,
+  //   }
 
-      setPricePackage(updTotalPrice)
-    }
-  }
+  //   setPricePackage(updPrice)
+  //   updateTotalPrice(updRoomCount)
+  // }
 
-  const updatePlan = (plan) => {
-    const updPrice = {
-      ...pricePackage,
-      plan: plan,
-    }
+  // const updateTotalPrice = (roomCount) => {
+  //   const newTotalPrice = parseFloat(roomPricing[roomCount - 1].price).toFixed(
+  //     2
+  //   )
+  //   if (roomCount <= 40) {
+  //     const updTotalPrice = {
+  //       ...pricePackage,
+  //       totalPrice: newTotalPrice,
+  //     }
 
-    setPricePackage(updPrice)
-    console.log(pricePackage)
-    updateTotalPrice(pricePackage.numRooms)
-  }
+  //     setPricePackage(updTotalPrice)
+  //   }
+  // }
+
+  // const updatePlan = (plan) => {
+  //   const updPrice = {
+  //     ...pricePackage,
+  //     plan: plan,
+  //   }
+
+  //   setPricePackage(updPrice)
+  //   console.log(pricePackage)
+  //   updateTotalPrice(pricePackage.numRooms)
+  // }
 
   return (
-    <TotalPriceContext.Provider
-      value={{ pricePackage, updatePlan, updateRoomCount, updateTotalPrice }}
-    >
+    <TotalPriceContext.Provider value={{ pricePackage, updatePricePackage }}>
       {children}
     </TotalPriceContext.Provider>
   )

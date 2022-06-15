@@ -8,7 +8,7 @@ export const PricingProvider = ({ children }) => {
   const [pricePackage, setPricePackage] = useState({
     plan: 'monthly',
     numRooms: 1,
-    totalPrice: '19.95',
+    totalPrice: 19.95,
     roomPricing: roomPricing,
   })
 

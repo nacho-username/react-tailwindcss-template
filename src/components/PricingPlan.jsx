@@ -1,19 +1,26 @@
 import { useContext, useEffect, useState } from 'react'
 import TotalPriceContext from '../context/TotalPriceContext'
+import { roundToTwo } from '../utilities/helpers'
 
 function PricingPlan() {
-  const { pricePackage } = useContext(TotalPriceContext)
+  const { pricePackage, updatePricePackage } = useContext(TotalPriceContext)
+  const [totalPrice, setTotalPrice] = useState(pricePackage.totalPrice)
 
   useEffect(() => {
-    setTotalPrice(pricePackage.totalPrice)
-  }, [pricePackage])
-
-  const [totalPrice, setTotalPrice] = useState()
+    if (pricePackage.plan === 'annually') {
+      console.log('Inside')
+      const annualPrice = roundToTwo(pricePackage.totalPrice * 12)
+      setTotalPrice(annualPrice)
+      console.log(annualPrice)
+    } else {
+      setTotalPrice(pricePackage.totalPrice)
+    }
+  }, [pricePackage, totalPrice])
 
   return (
     <div className='flex gap-12 mt-8'>
       <div className='flex-1 rounded-3xl shadow-lg p-8'>
-        <div className='rounded-full bg-gray-200 uppercase text-orange text-xs px-3 py-1 inline'>
+        <div className='rounded-full bg-gray-200 uppercase text-primary text-xs px-3 py-1 inline'>
           14 day free trial
         </div>
         <div
@@ -21,7 +28,7 @@ function PricingPlan() {
           className='text-4xl font-Lato text-blue font-bold mt-3'
         >
           £0.00
-          <span className='text-xs uppercase font-light text-blue'>
+          <span className='text-xs uppercase font-light text-blue ml-2'>
             /{pricePackage.plan.toUpperCase()}
           </span>
         </div>
@@ -33,13 +40,13 @@ function PricingPlan() {
           Features Tailored to BnB / Guesthouse
         </div>
       </div>
-      <div className='flex-1 bg-gradient-to-r from-orange to-rose-400 rounded-3xl p-8 !text-white rounded-3xl shadow-lg'>
-        <div className='rounded-full bg-gray-200 uppercase text-orange text-xs px-3 py-1 inline'>
+      <div className='flex-1 bg-gradient-to-r from-primary to-rose-400 rounded-3xl p-8 !text-white rounded-3xl shadow-lg'>
+        <div className='rounded-full bg-gray-200 uppercase text-primary text-xs px-3 py-1 inline'>
           Inn Style Member
         </div>
         <div id='monthlyPrice' className='text-4xl font-Lato font-bold mt-4'>
-          £{totalPrice}
-          <span className='text-xs uppercase font-light'>
+          £ {totalPrice.toFixed(2)}
+          <span className='text-xs uppercase font-light ml-2'>
             /{pricePackage.plan.toUpperCase()}
           </span>
         </div>

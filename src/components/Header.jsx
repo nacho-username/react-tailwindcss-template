@@ -16,7 +16,7 @@ function Header() {
   return (
     <div className='grid sm:grid-cols-2 md:grid-cols-3 gap-2 my-8'>
       <div className='col-span-2'>
-        <h4 className='text-orange text-lg font-Lato font-light uppercase'>
+        <h4 className='text-primary text-lg font-Lato font-light uppercase'>
           Pricing Plans
         </h4>
         <h1 className='text-blue text-6xl font-Yeseva'>Hello Affordable.</h1>

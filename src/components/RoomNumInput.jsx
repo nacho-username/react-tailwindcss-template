@@ -13,7 +13,7 @@ function RoomNumInput() {
   }
 
   const handlePlus = () => {
-    if (roomNum < 39) {
+    if (roomNum <= 39) {
       setRoomNum(roomNum + 1)
       updatePricePackage({
         numRooms: roomNum + 1,

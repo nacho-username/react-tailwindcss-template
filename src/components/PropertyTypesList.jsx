@@ -19,13 +19,10 @@ function PropertyTypesList() {
   })
 
   const handleClick = (e) => {
-    console.log(e.target.getAttribute('data-prop-type'))
     updatePricePackage({
       type: e.target.getAttribute('data-prop-type'),
     })
   }
-
-  console.log(pricePackage)
 
   return (
     <>

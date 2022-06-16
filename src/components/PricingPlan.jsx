@@ -41,7 +41,7 @@ function PricingPlan() {
           PMS features. No credit card details required for sign up!
         </div>
         <div className='text-sm text-bold text-lightgray mt-4 mb-8 italic'>
-          Features Tailored to BnB / Guesthouse
+          Features Tailored to {pricePackage.type.toUpperCase()}
         </div>
         <ul className=' flex flex-col space-y-5 w-full text-sm rounded-lg mt-2 mb-6 text-secondary'>
           <li className='flex mt-2 text-secondary'>
@@ -93,7 +93,7 @@ function PricingPlan() {
           PMS features. No credit card details required for sign up!
         </div>
         <div className='text-sm text-bold text-white mt-4 mb-8 italic'>
-          Features Tailored to BnB / Guesthouse
+          Features Tailored to {pricePackage.type.toUpperCase()}
         </div>
         <ul className=' flex flex-col space-y-5 w-full text-sm rounded-lg mt-2 mb-6 text-white'>
           <li className='flex mt-2 text-white'>

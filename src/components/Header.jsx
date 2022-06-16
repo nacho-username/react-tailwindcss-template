@@ -19,8 +19,9 @@ function Header() {
         <h4 className='text-primary text-sm sm:text-lg font-Lato font-light uppercase'>
           Pricing Plans
         </h4>
-        <h1 className='text-secondary text-4xl sm:text-6xl font-Yeseva'>
-          Hello Affordable.
+        <h1 className='text-secondary text-5xl sm:text-6xl font-Yeseva'>
+          Hello <br />
+          Affordable.
         </h1>
       </div>
       <div className='mx-6 sm:mx-0'>

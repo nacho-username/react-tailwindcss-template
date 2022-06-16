@@ -70,7 +70,7 @@ function PricingPlan() {
           See All Features
         </a>
         <div className='grid place-items-center my-10'>
-          <button className='py-4 px-8 text-sm bg-gray-100 text-primary rounded-full'>
+          <button className='py-4 px-8 text-xs sm:text-sm bg-gray-100 text-primary rounded-full'>
             Start your 14 day free trial
           </button>
         </div>
@@ -122,7 +122,7 @@ function PricingPlan() {
           See All Features
         </a>
         <div className='grid place-items-center my-10'>
-          <button className='py-4 px-8 text-sm bg-gray-100 text-primary rounded-full'>
+          <button className='py-4 px-8 text-xs sm:text-sm bg-gray-100 text-primary rounded-full'>
             Join The Inn Style Family
           </button>
         </div>

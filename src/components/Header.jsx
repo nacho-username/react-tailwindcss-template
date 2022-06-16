@@ -15,7 +15,7 @@ function Header() {
 
   return (
     <div className='grid sm:grid-cols-2 md:grid-cols-3 gap-2 my-8'>
-      <div className='col-span-2'>
+      <div className='col-span-2 mx-8 sm:mx-0'>
         <h4 className='text-primary text-lg font-Lato font-light uppercase'>
           Pricing Plans
         </h4>
@@ -23,52 +23,50 @@ function Header() {
           Hello Affordable.
         </h1>
       </div>
-      <div className=''>
-        <div>
-          <div className='form-control'>
-            <label className='label cursor-pointer justify-end'>
-              <span
-                className={`label-text mr-4 ${
-                  plan === 'monthly' ? 'text-secondary' : 'text-lightgray'
-                }`}
-              >
-                Pay Monthly
-              </span>
-              <input
-                id='plan-monthly'
-                type='radio'
-                name='monthly'
-                className='radio checked:bg-primary'
-                value='monthly'
-                checked={plan === 'monthly'}
-                onChange={handleChange}
-              />
-            </label>
-          </div>
-          <div className='form-control'>
-            <label className='label cursor-pointer justify-end'>
-              <span
-                className={`label-text mr-4 ${
-                  plan === 'annually' ? 'text-secondary' : 'text-lightgray'
-                }`}
-              >
-                Pay Annually (Save 10%)
-              </span>
-              <input
-                id='plan-annually'
-                type='radio'
-                name='annually'
-                className={`radio ${
-                  plan === 'annually'
-                    ? 'checked:bg-primary'
-                    : 'checked:bg-gray-400'
-                }`}
-                checked={plan === 'annually'}
-                value='annually'
-                onChange={handleChange}
-              />
-            </label>
-          </div>
+      <div className='mx-6 sm:mx-0'>
+        <div className='form-control'>
+          <label className='label cursor-pointer justify-end flex-row-reverse sm:flex-row'>
+            <span
+              className={`label-text ml-4 sm:mr-4 ${
+                plan === 'monthly' ? 'text-secondary' : 'text-lightgray'
+              }`}
+            >
+              Pay Monthly
+            </span>
+            <input
+              id='plan-monthly'
+              type='radio'
+              name='monthly'
+              className='radio checked:bg-primary'
+              value='monthly'
+              checked={plan === 'monthly'}
+              onChange={handleChange}
+            />
+          </label>
+        </div>
+        <div className='form-control'>
+          <label className='label cursor-pointer justify-end flex-row-reverse sm:flex-row'>
+            <span
+              className={`label-text ml-4 sm:mr-4 ${
+                plan === 'annually' ? 'text-secondary' : 'text-lightgray'
+              }`}
+            >
+              Pay Annually (Save 10%)
+            </span>
+            <input
+              id='plan-annually'
+              type='radio'
+              name='annually'
+              className={`radio ${
+                plan === 'annually'
+                  ? 'checked:bg-primary'
+                  : 'checked:bg-gray-400'
+              }`}
+              checked={plan === 'annually'}
+              value='annually'
+              onChange={handleChange}
+            />
+          </label>
         </div>
       </div>
     </div>

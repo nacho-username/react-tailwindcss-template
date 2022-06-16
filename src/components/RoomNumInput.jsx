@@ -34,7 +34,7 @@ function RoomNumInput() {
     <div className='flex justify-center'>
       <label className='label'>
         <span className='label-text mr-2 text-lightgray'>I have</span>
-        <div className='flex align-middle py-3 px-6 border text-primary border-lightgray rounded-full'>
+        <div className='flex align-middle justify-center w-[130px] py-3 px-6 border text-primary border-lightgray rounded-full'>
           <div onClick={handlePlus} className='text-md mr-2 cursor-pointer'>
             +
           </div>

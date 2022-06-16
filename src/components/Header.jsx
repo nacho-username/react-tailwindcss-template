@@ -16,16 +16,16 @@ function Header() {
   return (
     <div className='grid sm:grid-cols-2 md:grid-cols-3 gap-2 my-8'>
       <div className='col-span-2 mx-8 sm:mx-0'>
-        <h4 className='text-primary text-lg font-Lato font-light uppercase'>
+        <h4 className='text-primary text-sm sm:text-lg font-Lato font-light uppercase'>
           Pricing Plans
         </h4>
-        <h1 className='text-secondary text-6xl font-Yeseva'>
+        <h1 className='text-secondary text-4xl sm:text-6xl font-Yeseva'>
           Hello Affordable.
         </h1>
       </div>
       <div className='mx-6 sm:mx-0'>
         <div className='form-control'>
-          <label className='label cursor-pointer justify-end flex-row-reverse sm:flex-row'>
+          <label className='label cursor-pointer justify-end flex-row-reverse md:flex-row'>
             <span
               className={`label-text ml-4 sm:mr-4 ${
                 plan === 'monthly' ? 'text-secondary' : 'text-lightgray'
@@ -45,7 +45,7 @@ function Header() {
           </label>
         </div>
         <div className='form-control'>
-          <label className='label cursor-pointer justify-end flex-row-reverse sm:flex-row'>
+          <label className='label cursor-pointer justify-end flex-row-reverse md:flex-row'>
             <span
               className={`label-text ml-4 sm:mr-4 ${
                 plan === 'annually' ? 'text-secondary' : 'text-lightgray'

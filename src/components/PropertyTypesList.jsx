@@ -1,10 +1,15 @@
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
+import TotalPriceContext from '../context/TotalPriceContext'
+import { getPropertyTypes } from '../data'
 
 function PropertyTypesList() {
+  const { pricePackage, updatePricePackage } = useContext(TotalPriceContext)
   const [isDesktop, setisDesktop] = useState(window.innerWidth > 650)
 
+  const propertyTypes = getPropertyTypes()
+
   const updateMedia = (width) => {
-    setisDesktop(width > 1024)
+    setisDesktop(true)
   }
 
   useEffect(() => {
@@ -13,21 +18,40 @@ function PropertyTypesList() {
     return () => window.removeEventListener('resize', updateMedia)
   })
 
+  const handleClick = (e) => {
+    console.log(e.target.getAttribute('data-prop-type'))
+    updatePricePackage({
+      type: e.target.getAttribute('data-prop-type'),
+    })
+  }
+
+  console.log(pricePackage)
+
   return (
     <>
       {isDesktop ? (
         <div className='tabs text-secondary mb-6 justify-stretch font-bold'>
-          <a className='tab tab-bordered flex-1 tab-active'>BnB / Guesthouse</a>
-          <a className='tab tab-bordered flex-1'>Self Catering</a>
-          <a className='tab tab-bordered flex-1'>Small / Boutique Hotels</a>
-          <a className='tab tab-bordered flex-1'>Campsites</a>
-          <a className='tab tab-bordered flex-1'>Pubs / Inns</a>
+          {propertyTypes.map((type) => (
+            <div
+              data-prop-type={type.dataId}
+              className={`tab tab-bordered flex-1 ${
+                pricePackage.type === type.dataId ? 'tab-active' : ''
+              }`}
+              onClick={handleClick}
+            >
+              {type.title}
+            </div>
+          ))}
         </div>
       ) : (
         <div className='flex justify-center mb-4'>
           <select className='select w-60 max-w-xs select-primary'>
-            <option>BnB / Guesthouse</option>
-            <option>Self Catering</option>
+            <option onClick={handleClick} data-prop-type='bnb'>
+              BnB / Guesthouse
+            </option>
+            <option onClick={handleClick} data-prop-type='self-catering'>
+              Self Catering
+            </option>
             <option>Small / Boutique Hotels</option>
             <option>Campsites</option>
             <option>Pubs / Inns</option>

@@ -10,6 +10,7 @@ export const PricingProvider = ({ children }) => {
     numRooms: 1,
     totalPrice: 19.95,
     roomPricing: roomPricing,
+    type: 'bnb',
   })
 
   const updatePricePackage = (updPackage) => {

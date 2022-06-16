@@ -41,6 +41,18 @@ let roomPricing = [
   { price: '145.95' },
 ]
 
+let propertyTypes = [
+  { title: 'BnB / Guesthouse', dataId: 'bnb' },
+  { title: 'Self Catering', dataId: 'self-catering' },
+  { title: 'Small / Boutique Hotels', dataId: 'hotel' },
+  { title: 'Campsites', dataId: 'campsite' },
+  { title: 'Pubs / Inns', dataId: 'pub' },
+]
+
 export function getPricing() {
   return roomPricing
+}
+
+export function getPropertyTypes() {
+  return propertyTypes
 }

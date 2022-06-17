@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from 'react'
 import TotalPriceContext from '../context/TotalPriceContext'
 import { getPropertyTypes } from '../data'
+import { calculateCampsitePricing } from '../utilities/helpers'
 
 function PropertyTypesList() {
   const { pricePackage, updatePricePackage } = useContext(TotalPriceContext)
@@ -19,9 +20,20 @@ function PropertyTypesList() {
   })
 
   const handleClick = (e) => {
-    updatePricePackage({
-      type: e.target.getAttribute('data-prop-type'),
-    })
+    const propertyType = e.target.getAttribute('data-prop-type')
+    if (propertyType === 'campsite') {
+      const getCampsitePrice = calculateCampsitePricing(pricePackage.numRooms)
+      updatePricePackage({
+        type: propertyType,
+        totalPrice: getCampsitePrice,
+      })
+      return
+    } else {
+      updatePricePackage({
+        type: propertyType,
+        numRooms: 40,
+      })
+    }
   }
 
   return (

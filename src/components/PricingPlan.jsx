@@ -1,25 +1,30 @@
 import { useContext, useEffect, useState } from 'react'
 import TotalPriceContext from '../context/TotalPriceContext'
-
+import { calculateCampsitePricing } from '../utilities/helpers'
 // components
 import { CheckIcon, CrossIcon } from './shared/CheckIcon'
 
 function PricingPlan() {
   const { pricePackage } = useContext(TotalPriceContext)
-  const [totalPrice, setTotalPrice] = useState(
-    pricePackage.roomPricing[pricePackage.numRooms - 1].price
-  )
+  const [totalPrice, setTotalPrice] = useState()
 
   useEffect(() => {
-    const currentTotalPrice =
-      pricePackage.roomPricing[pricePackage.numRooms - 1].price
+    if (pricePackage.type !== 'campsite') {
+      const currentTotalPrice =
+        pricePackage.roomPricing[pricePackage.numRooms - 1].price
 
-    if (pricePackage.plan === 'annually') {
-      setTotalPrice((currentTotalPrice * 12).toFixed(2))
+      if (pricePackage.plan === 'annually') {
+        setTotalPrice((currentTotalPrice * 12).toFixed(2))
+      } else {
+        setTotalPrice(currentTotalPrice)
+      }
     } else {
-      setTotalPrice(currentTotalPrice)
+      const getCampsitePricing = calculateCampsitePricing(pricePackage.numRooms)
+      console.log('Setting local state total')
+      setTotalPrice(parseFloat(getCampsitePricing).toFixed(2))
+      console.log(getCampsitePricing)
     }
-  }, [pricePackage, totalPrice])
+  }, [pricePackage])
 
   return (
     <div className='flex flex-col-reverse gap-8 mt-8 justify-center mx-12 sm:mx-2 sm:flex-row md:gap-24'>

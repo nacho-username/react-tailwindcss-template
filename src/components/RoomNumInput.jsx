@@ -1,9 +1,14 @@
-import { useContext, useState } from 'react'
+import { useContext, useState, useEffect } from 'react'
 import TotalPriceContext from '../context/TotalPriceContext'
+import { calculateCampsitePricing } from '../utilities/helpers'
 
 function RoomNumInput() {
   const { pricePackage, updatePricePackage } = useContext(TotalPriceContext)
   const [roomNum, setRoomNum] = useState(pricePackage.numRooms)
+
+  useEffect(() => {
+    setRoomNum(pricePackage.numRooms)
+  }, [pricePackage])
 
   const handleChange = (e) => {
     setRoomNum(e.target.value)
@@ -13,20 +18,42 @@ function RoomNumInput() {
   }
 
   const handlePlus = () => {
-    if (roomNum <= 39) {
-      setRoomNum(roomNum + 1)
-      updatePricePackage({
-        numRooms: roomNum + 1,
-      })
+    if (pricePackage.type !== 'campsite') {
+      if (roomNum <= 39) {
+        setRoomNum(roomNum + 1)
+        updatePricePackage({
+          numRooms: roomNum + 1,
+        })
+      }
+    } else {
+      if (roomNum <= 99) {
+        setRoomNum(roomNum + 1)
+        let getCampsitePricing = calculateCampsitePricing(roomNum)
+        updatePricePackage({
+          totalPrice: parseFloat(getCampsitePricing),
+          numRooms: roomNum + 1,
+        })
+      }
     }
   }
 
   const handleMinus = () => {
-    if (roomNum > 1) {
-      setRoomNum(roomNum - 1)
-      updatePricePackage({
-        numRooms: roomNum - 1,
-      })
+    if (pricePackage.type !== 'campsite') {
+      if (roomNum > 1) {
+        setRoomNum(roomNum - 1)
+        updatePricePackage({
+          numRooms: roomNum - 1,
+        })
+      }
+    } else {
+      if (roomNum > 1) {
+        setRoomNum(roomNum - 1)
+        let getCampsitePricing = calculateCampsitePricing(roomNum)
+        updatePricePackage({
+          totalPrice: parseFloat(getCampsitePricing),
+          numRooms: roomNum - 1,
+        })
+      }
     }
   }
 

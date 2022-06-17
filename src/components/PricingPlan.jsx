@@ -1,6 +1,10 @@
 import { useContext, useEffect, useState } from 'react'
 import TotalPriceContext from '../context/TotalPriceContext'
-import { calculateCampsitePricing } from '../utilities/helpers'
+import {
+  calculateCampsitePricing,
+  getDiscountedAmount,
+} from '../utilities/helpers'
+
 // components
 import { CheckIcon, CrossIcon } from './shared/CheckIcon'
 
@@ -14,15 +18,14 @@ function PricingPlan() {
         pricePackage.roomPricing[pricePackage.numRooms - 1].price
 
       if (pricePackage.plan === 'annually') {
-        setTotalPrice((currentTotalPrice * 12).toFixed(2))
+        const discountedtotal = getDiscountedAmount(currentTotalPrice * 12)
+        setTotalPrice(discountedtotal.toFixed(2))
       } else {
         setTotalPrice(currentTotalPrice)
       }
     } else {
       const getCampsitePricing = calculateCampsitePricing(pricePackage.numRooms)
-      console.log('Setting local state total')
       setTotalPrice(parseFloat(getCampsitePricing).toFixed(2))
-      console.log(getCampsitePricing)
     }
   }, [pricePackage])
 

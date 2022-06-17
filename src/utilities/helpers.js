@@ -14,3 +14,7 @@ export function calculateCampsitePricing(numRooms) {
     return (campsiteTotalPrice = 100.0)
   }
 }
+
+export function getDiscountedAmount(total) {
+  return total - total * 0.1
+}

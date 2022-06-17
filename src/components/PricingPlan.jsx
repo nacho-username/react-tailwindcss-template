@@ -86,7 +86,7 @@ function PricingPlan() {
           Prices displayed are in GBP and exclude VAT
         </div>
       </div>
-      <div className='sm:basis-96 bg-gradient-to-r from-orange-400 to-primary p-8 rounded-xl !text-white shadow-lg'>
+      <div className='sm:basis-96 bg-gradient-to-br from-orange-400 to-primary p-8 rounded-xl !text-white shadow-lg'>
         <div className='rounded-full bg-gray-200 uppercase text-primary text-xs px-3 py-1 inline'>
           Inn Style Member
         </div>

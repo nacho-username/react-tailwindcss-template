@@ -42,6 +42,7 @@ function PropertyTypesList() {
         <div className='tabs text-secondary mb-6 justify-stretch font-bold'>
           {propertyTypes.map((type) => (
             <div
+              key={type}
               data-prop-type={type.dataId}
               className={`tab tab-bordered flex-1 ${
                 pricePackage.type === type.dataId ? 'tab-active' : ''

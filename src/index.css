@@ -7,6 +7,7 @@
 .tab-active {
   border-color: rgb(241 113 71 / var(--tw-border-opacity)) !important;
   border-style: solid;
+  border-bottom-width: 3px !important;
   font-weight: 700 !important;
   color: rgb(241 113 71 / var(--tw-text-opacity)) !important;
   border-bottom-width: calc(var(--tab-border, 1px) + 1px);

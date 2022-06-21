@@ -44,7 +44,7 @@ function PropertyTypesList() {
             <div
               key={type}
               data-prop-type={type.dataId}
-              className={`tab tab-bordered flex-1 ease-in-out delay-150 ${
+              className={`tab border-b border-gray-400 text-secondary text-lg pb-10 flex-1 transition ease-in-out delay-75 ${
                 pricePackage.type === type.dataId ? 'tab-active' : ''
               }`}
               onMouseOver={handleClick}

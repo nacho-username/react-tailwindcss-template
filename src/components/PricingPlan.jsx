@@ -31,7 +31,7 @@ function PricingPlan() {
 
   return (
     <div className='flex flex-col-reverse md:gap-24 mt-8 justify-between mx-12 sm:mx-2 sm:flex-row '>
-      <div className='sm:basis-1/2 md:basis-2/5 rounded-xl shadow-lg p-8'>
+      <div className='sm:basis-1/2 md:basis-2/5 rounded-xl shadow-lg p-12'>
         <div className='rounded-full bg-gray-200 uppercase text-primary text-xs px-3 py-1 inline'>
           14 day free trial
         </div>
@@ -44,11 +44,11 @@ function PricingPlan() {
             /{pricePackage.plan.toUpperCase()}
           </span>
         </div>
-        <div className='text-2xs text-lightgray my-8 font-light'>
+        <div className='text-xs text-lightgray my-8 font-light'>
           A 14 day free trial grants you access to ALL of our direct bookings
           PMS features. No credit card details required for sign up!
         </div>
-        <div className='text-sm text-bold text-lightgray mt-4 mb-8 italic'>
+        <div className='text-md text-bold text-lightgray mt-4 mb-8 italic'>
           Features Tailored to {pricePackage.type.toUpperCase()}
         </div>
         <ul className=' flex flex-col space-y-5 w-full text-sm rounded-lg mt-2 mb-6 text-secondary'>
@@ -74,7 +74,7 @@ function PricingPlan() {
             <CheckIcon classes='text-primary mr-1' label='Unlimited users' />
           </li>
         </ul>
-        <a href='#' className='text-2xs text-lightgray underline'>
+        <a href='#' className='text-xs text-lightgray underline'>
           See All Features
         </a>
         <div className='grid place-items-center my-10'>
@@ -86,7 +86,7 @@ function PricingPlan() {
           Prices displayed are in GBP and exclude VAT
         </div>
       </div>
-      <div className='sm:basis-1/2 md:basis-2/5 bg-gradient-to-br from-orange-400 to-primary p-8 rounded-xl !text-white shadow-lg'>
+      <div className='sm:basis-1/2 md:basis-2/5 bg-gradient-to-br from-orange-400 to-primary p-12 rounded-xl !text-white shadow-lg'>
         <div className='rounded-full bg-gray-200 uppercase text-primary text-xs px-3 py-1 inline'>
           Inn Style Member
         </div>
@@ -96,11 +96,11 @@ function PricingPlan() {
             /{pricePackage.plan.toUpperCase()}
           </span>
         </div>
-        <div className='text-2xs text-white my-8 font-light'>
+        <div className='text-xs text-white my-8 font-light'>
           A 14 day free trial grants you access to ALL of our direct bookings
           PMS features. No credit card details required for sign up!
         </div>
-        <div className='text-sm text-bold text-white mt-4 mb-8 italic'>
+        <div className='text-md text-bold text-white mt-4 mb-8 italic'>
           Features Tailored to {pricePackage.type.toUpperCase()}
         </div>
         <ul className=' flex flex-col space-y-5 w-full text-sm rounded-lg mt-2 mb-6 text-white'>
@@ -126,7 +126,7 @@ function PricingPlan() {
             <CheckIcon classes='text-white mr-1' label='Unlimited users' />
           </li>
         </ul>
-        <a href='#' className='block text-2xs text-white underline'>
+        <a href='#' className='block text-xs text-white underline'>
           See All Features
         </a>
         <div className='grid place-items-center my-10'>

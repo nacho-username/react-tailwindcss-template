@@ -37,7 +37,7 @@ function Header() {
               id='plan-monthly'
               type='radio'
               name='monthly'
-              className='radio checked:bg-secondary'
+              className='radio bg-gray-200 checked:bg-secondary'
               value='monthly'
               checked={plan === 'monthly'}
               onChange={handleChange}
@@ -57,7 +57,7 @@ function Header() {
               id='plan-annually'
               type='radio'
               name='annually'
-              className={`radio ${
+              className={`radio bg-gray-200 ${
                 plan === 'annually'
                   ? 'checked:bg-secondary'
                   : 'checked:bg-gray-400'

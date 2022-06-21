@@ -5,12 +5,12 @@ import { calculateCampsitePricing } from '../utilities/helpers'
 
 function PropertyTypesList() {
   const { pricePackage, updatePricePackage } = useContext(TotalPriceContext)
-  const [isDesktop, setisDesktop] = useState(window.innerWidth > 650)
+  const [isDesktop, setIsDesktop] = useState(window.innerWidth > 650)
 
   const propertyTypes = getPropertyTypes()
 
   const updateMedia = (width) => {
-    setisDesktop(true)
+    setIsDesktop(true)
   }
 
   useEffect(() => {
@@ -39,14 +39,15 @@ function PropertyTypesList() {
   return (
     <>
       {isDesktop ? (
-        <div className='tabs text-secondary mb-6 justify-stretch font-bold'>
+        <div className='tabs group text-secondary mb-6 justify-stretch font-bold'>
           {propertyTypes.map((type) => (
             <div
               key={type}
               data-prop-type={type.dataId}
-              className={`tab tab-bordered flex-1 ${
+              className={`tab tab-bordered flex-1 ease-in-out delay-150 ${
                 pricePackage.type === type.dataId ? 'tab-active' : ''
               }`}
+              onMouseOver={handleClick}
               onClick={handleClick}
             >
               {type.title}

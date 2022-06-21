@@ -20,15 +20,14 @@ function Header() {
           Pricing Plans
         </h4>
         <h1 className='text-secondary text-5xl sm:text-6xl font-Yeseva'>
-          Hello <br />
-          Affordable.
+          Hello Affordable.
         </h1>
       </div>
       <div className='mx-6 sm:mx-0'>
         <div className='form-control'>
           <label className='label cursor-pointer justify-end flex-row-reverse md:flex-row'>
             <span
-              className={`label-text ml-4 sm:mr-4 ${
+              className={`label-text ml-4 sm:mr-4 text-xl font-medium ${
                 plan === 'monthly' ? 'text-secondary' : 'text-lightgray'
               }`}
             >
@@ -38,7 +37,7 @@ function Header() {
               id='plan-monthly'
               type='radio'
               name='monthly'
-              className='radio checked:bg-primary'
+              className='radio checked:bg-secondary'
               value='monthly'
               checked={plan === 'monthly'}
               onChange={handleChange}
@@ -48,7 +47,7 @@ function Header() {
         <div className='form-control'>
           <label className='label cursor-pointer justify-end flex-row-reverse md:flex-row'>
             <span
-              className={`label-text ml-4 sm:mr-4 ${
+              className={`label-text ml-4 sm:mr-4 text-xl font-medium ${
                 plan === 'annually' ? 'text-secondary' : 'text-lightgray'
               }`}
             >
@@ -60,7 +59,7 @@ function Header() {
               name='annually'
               className={`radio ${
                 plan === 'annually'
-                  ? 'checked:bg-primary'
+                  ? 'checked:bg-secondary'
                   : 'checked:bg-gray-400'
               }`}
               checked={plan === 'annually'}

@@ -39,7 +39,7 @@ function PropertyTypesList() {
   return (
     <>
       {isDesktop ? (
-        <div className='tabs group text-secondary mb-6 justify-stretch font-bold'>
+        <div className='tabs group text-secondary mt-20 mb-6 justify-stretch font-bold'>
           {propertyTypes.map((type) => (
             <div
               key={type}

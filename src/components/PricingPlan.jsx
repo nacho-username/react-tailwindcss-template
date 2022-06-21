@@ -37,7 +37,7 @@ function PricingPlan() {
         </div>
         <div
           id='annualPrice'
-          className='text-4xl font-Lato text-blue font-bold mt-3'
+          className='text-4xl font-Lato text-secondary font-bold mt-3'
         >
           £0.00
           <span className='text-xs uppercase font-light text-blue ml-2'>

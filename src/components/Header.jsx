@@ -16,7 +16,7 @@ function Header() {
   return (
     <div className='grid sm:grid-cols-2 md:grid-cols-3 gap-2 my-8'>
       <div className='col-span-2 mx-8 sm:mx-0'>
-        <h4 className='text-primary text-lg font-medium sm:text-lg font-Lato font-light uppercase'>
+        <h4 className='text-primary text-lg font-regular sm:text-lg font-Lato uppercase'>
           Pricing Plans
         </h4>
         <h1 className='text-secondary text-5xl sm:text-6xl font-Yeseva'>
@@ -27,7 +27,7 @@ function Header() {
         <div className='form-control'>
           <label className='label cursor-pointer justify-end flex-row-reverse md:flex-row'>
             <span
-              className={`label-text ml-4 sm:mr-4 text-xl font-medium ${
+              className={`label-text ml-4 sm:mr-4 text-xl font-regular ${
                 plan === 'monthly' ? 'text-secondary' : 'text-lightgray'
               }`}
             >
@@ -37,7 +37,7 @@ function Header() {
               id='plan-monthly'
               type='radio'
               name='monthly'
-              className='radio bg-gray-200 checked:bg-secondary'
+              className='radio border border-gray-200 checked:bg-secondary checked:border-secondary'
               value='monthly'
               checked={plan === 'monthly'}
               onChange={handleChange}
@@ -47,7 +47,7 @@ function Header() {
         <div className='form-control'>
           <label className='label cursor-pointer justify-end flex-row-reverse md:flex-row'>
             <span
-              className={`label-text ml-4 sm:mr-4 text-xl font-medium ${
+              className={`label-text ml-4 sm:mr-4 text-xl font-regular ${
                 plan === 'annually' ? 'text-secondary' : 'text-lightgray'
               }`}
             >
@@ -57,11 +57,11 @@ function Header() {
               id='plan-annually'
               type='radio'
               name='annually'
-              className={`radio bg-gray-200 ${
+              className={`radio border-lightgray ${
                 plan === 'annually'
                   ? 'checked:bg-secondary'
                   : 'checked:bg-gray-400'
-              }`}
+              } checked:border-secondary`}
               checked={plan === 'annually'}
               value='annually'
               onChange={handleChange}

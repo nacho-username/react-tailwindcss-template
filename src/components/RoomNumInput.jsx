@@ -43,7 +43,7 @@ function RoomNumInput() {
         <input
           type='range'
           min='1'
-          max='40'
+          max={pricePackage.type === 'campsite' ? 100 : 40}
           value={roomNum}
           onChange={handleChange}
           step='1'

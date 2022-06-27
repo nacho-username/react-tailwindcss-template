@@ -26,12 +26,15 @@ function PropertyTypesList() {
       updatePricePackage({
         type: propertyType,
         totalPrice: getCampsitePrice,
+        numRooms: 40,
+        unit: 'pitch',
       })
       return
     } else {
       updatePricePackage({
         type: propertyType,
-        numRooms: 40,
+        numRooms: 2,
+        unit: 'room',
       })
     }
   }
@@ -56,16 +59,22 @@ function PropertyTypesList() {
         </div>
       ) : (
         <div className='flex justify-center mb-4'>
-          <select className='select w-60 max-w-xs select-primary'>
+          <select className='select w-96 select-secondary text-secondary'>
             <option onClick={handleClick} data-prop-type='bnb'>
               BnB / Guesthouse
             </option>
             <option onClick={handleClick} data-prop-type='self-catering'>
               Self Catering
             </option>
-            <option>Small / Boutique Hotels</option>
-            <option>Campsites</option>
-            <option>Pubs / Inns</option>
+            <option onClick={handleClick} data-prop-type='hotel'>
+              Small / Boutique Hotels
+            </option>
+            <option onClick={handleClick} data-prop-type='campsite'>
+              Campsites
+            </option>
+            <option onClick={handleClick} data-prop-type='pub'>
+              Pubs / Inns
+            </option>
           </select>
         </div>
       )}

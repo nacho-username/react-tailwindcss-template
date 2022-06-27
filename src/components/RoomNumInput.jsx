@@ -20,6 +20,14 @@ function RoomNumInput() {
     }
   }
 
+  const renderIncrementSteps = () => {
+    let steps = []
+    for (let i = 1; i < 41; i++) {
+      steps.push(<span className='text-lightgray invisible md:visible'>|</span>)
+    }
+    return steps
+  }
+
   return (
     <div className='w-2/3 mx-auto'>
       <label className='label w-32 mx-auto'>
@@ -45,6 +53,9 @@ function RoomNumInput() {
           step='1'
           className='range range-primary'
         />
+        <div class='w-full flex justify-between text-xs px-2'>
+          {renderIncrementSteps()}
+        </div>
       </div>
     </div>
   )

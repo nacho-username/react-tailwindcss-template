@@ -35,7 +35,7 @@ function PricingPlan() {
   return (
     <div className='flex flex-col-reverse md:gap-24 mt-8 justify-between mx-12 sm:mx-2 sm:flex-row'>
       <div className='sm:basis-1/2 md:basis-2/3 rounded-xl shadow-2xl p-12 z-10 bg-white'>
-        <div className='rounded-full bg-gray-200 uppercase text-primary text-xs px-3 py-1 inline'>
+        <div className='rounded-full bg-gray-100 uppercase text-primary text-xs px-3 py-1 inline'>
           14 day free trial
         </div>
         <div
@@ -43,90 +43,93 @@ function PricingPlan() {
           className='text-4xl font-Lato text-secondary font-bold mt-3'
         >
           £0.00
-          <span className='text-xs uppercase font-light text-blue ml-2'>
-            /{pricePackage.plan.toUpperCase()}
+          <span className='text-xs uppercase text-gray-400 font-bold ml-2'>
+            / {pricePackage.plan.toUpperCase()}
           </span>
         </div>
-        <div className='text-xs text-lightgray my-8 font-light'>
-          A 14 day free trial grants you access to ALL of our direct bookings
-          PMS features. No credit card details required for sign up!
+        <div className='text-xs text-gray-400 my-8 font-light'>
+          A 14 day free trail grants you access to ALL of our direct booking PMS
+          features. No card details required for sign up!
         </div>
-        <div className='text-md text-bold text-lightgray mt-4 mb-8 italic'>
-          Features Tailored to {propertyType}
+        <div className='text-md text-regular text-gray-400 mt-4 mb-8'>
+          Features Tailored to{' '}
+          <span className='text-primary font-bold'>{propertyType}</span>
         </div>
-        <ul className=' flex flex-col space-y-5 w-full text-sm rounded-lg mt-2 mb-6 text-secondary'>
+        <ul className=' flex flex-col space-y-7 w-full text-sm rounded-lg mt-2 mb-6 text-secondary font-bold'>
           <li className='flex mt-2 text-secondary'>
             <CrossIcon
               classes='text-lightgray mr-1'
               label='Third-party channel connections'
             />
           </li>
-          <li className='flex my-2'>
+          <li className='flex'>
             <CheckIcon
               classes='text-primary mr-1'
               label='Unrivalled customer support'
             />
           </li>
-          <li className='flex my-2'>
+          <li className='flex'>
             <CheckIcon
               classes='text-primary mr-1'
               label='0% commission on OTA bookings'
             />
           </li>
-          <li className='flex my-2'>
+          <li className='flex'>
             <CheckIcon classes='text-primary mr-1' label='Unlimited users' />
           </li>
         </ul>
-        <a href='#' className='text-xs text-lightgray underline'>
+        <a href='#' className='text-xs text-gray-400 underline'>
           See All Features
         </a>
         <div className='grid place-items-center my-10'>
-          <button className='py-4 px-8 text-xs sm:text-sm bg-gray-100 hover:scale-110 text-primary rounded-full transition delay-150 duration-200 ease-in-out'>
-            Start your 14 day free trial
+          <button className='py-4 px-8 text-xs sm:text-sm bg-gray-100 hover:scale-110 text-primary rounded-full transition delay-150 duration-200 ease-in-out w-full'>
+            Start your <span className='font-bold'>14 day free trial</span>
           </button>
         </div>
         <div className='text-2xs text-center italic text-lightgray'>
-          Prices displayed are in GBP and exclude VAT
+          Free trial will end after 14 days from activation, and all features
+          will be disabled. No payment details required
         </div>
       </div>
 
       <div className='sm:basis-1/2 md:basis-2/3 bg-gradient-to-br from-orange-400 to-primary p-12 rounded-xl !text-white shadow-2xl'>
-        <div className='rounded-full bg-gray-200 uppercase text-primary text-xs px-3 py-1 inline'>
+        <div className='rounded-full bg-gray-100 uppercase text-primary text-xs px-3 py-1 inline'>
           Inn Style Member
         </div>
         <div id='monthlyPrice' className='text-4xl font-Lato font-bold mt-4'>
           £ {totalPrice}
-          <span className='text-xs uppercase font-light ml-2'>
-            /{pricePackage.plan.toUpperCase()}
+          <span className='text-xs uppercase font-bold text-white ml-2'>
+            / {pricePackage.plan.toUpperCase()}
           </span>
         </div>
         <div className='text-xs text-white my-8 font-light'>
-          A 14 day free trial grants you access to ALL of our direct bookings
-          PMS features. No credit card details required for sign up!
+          The most affordable, premium PMS system package out there! One set
+          rate tailored to your accommodation needs.
         </div>
-        <div className='text-md text-bold text-white mt-4 mb-8 italic'>
-          Features Tailored to {propertyType}
+        <div className='text-md text-regular text-white mt-4 mb-8'>
+          Features Tailored to{' '}
+          <span className='text-white font-bold'>{propertyType}</span>
         </div>
-        <ul className=' flex flex-col space-y-5 w-full text-sm rounded-lg mt-2 mb-6 text-white'>
+        <ul className=' flex flex-col space-y-7 w-full text-sm rounded-lg mt-2 mb-6 text-white font-bold'>
           <li className='flex mt-2 text-white'>
             <CheckIcon
               classes='text-white mr-1'
               label='Premium features (Full Access)'
             />
           </li>
-          <li className='flex my-2'>
+          <li className='flex'>
             <CheckIcon
               classes='text-white mr-1'
               label='Unrivalled customer support'
             />
           </li>
-          <li className='flex my-2'>
+          <li className='flex'>
             <CheckIcon
               classes='text-white mr-1'
               label='0% commission on OTA bookings'
             />
           </li>
-          <li className='flex my-2'>
+          <li className='flex'>
             <CheckIcon classes='text-white mr-1' label='Unlimited users' />
           </li>
         </ul>
@@ -134,8 +137,8 @@ function PricingPlan() {
           See All Features
         </a>
         <div className='grid place-items-center my-10'>
-          <button className='py-4 px-8 text-xs sm:text-sm bg-gray-100 hover:scale-110 text-primary rounded-full transition delay-150 duration-200 ease-in-out'>
-            Join The Inn Style Family
+          <button className='py-4 px-8 text-xs sm:text-sm bg-gray-100 hover:scale-110 text-primary rounded-full transition delay-150 duration-200 ease-in-out w-full'>
+            Join The <span className='font-bold'>Inn Style Family</span>
           </button>
         </div>
         <div className='text-2xs text-center italic text-white'>

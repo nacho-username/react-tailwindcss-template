@@ -7,7 +7,7 @@ import PropertyTypesList from './components/PropertyTypesList'
 function App() {
   return (
     <>
-      <div className='container max-w-screen-xl px-8 mx-auto'>
+      <div className='container bg-transparent max-w-screen-xl px-8 mx-auto'>
         <Header />
         <PropertyTypesList />
         <RoomNumInput />

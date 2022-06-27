@@ -7,13 +7,13 @@ import PropertyTypesList from './components/PropertyTypesList'
 function App() {
   return (
     <>
-      <div className='container mx-auto'>
+      <div className='container max-w-screen-xl px-8 mx-auto'>
         <Header />
         <PropertyTypesList />
         <RoomNumInput />
         <PricingPlan />
       </div>
-      <div className='bg-secondary min-h-[36rem] py-24 -mt-[22rem]'></div>
+      {/* <div className='bg-secondary min-h-[36rem] py-24 -mt-[22rem]'></div> */}
     </>
   )
 }

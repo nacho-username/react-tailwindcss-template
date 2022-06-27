@@ -32,18 +32,14 @@ function RoomNumInput() {
     <div className='w-2/3 mx-auto'>
       <label className='label w-32 mx-auto'>
         <span className='label-text mr-2 text-lightgray'>I have</span>
-        <span className='label-text mr-2 text-primary'>{roomNum}</span>
-        <div className='label-text ml-2 text-lightgray'>
+        <span className='label-text mr-2 text-primary text-center'>
+          {roomNum}
+        </span>
+        <div className='label-text text-lightgray'>
           {roomNum > 1 ? 'rooms' : 'room'}
         </div>
       </label>
       <div className='text-primary grow  rounded-full'>
-        {/* <input
-            type='number'
-            value={roomNum}
-            onChange={handleChange}
-            className='text-sm py-4 w-24'
-          /> */}
         <input
           type='range'
           min='1'

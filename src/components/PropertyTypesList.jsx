@@ -1,22 +1,22 @@
 import { useContext, useEffect, useState } from 'react'
+
 import TotalPriceContext from '../context/TotalPriceContext'
 import { getPropertyTypes } from '../data'
 import { calculateCampsitePricing } from '../utilities/helpers'
 
 function PropertyTypesList() {
   const { pricePackage, updatePricePackage } = useContext(TotalPriceContext)
-  const [isDesktop, setIsDesktop] = useState(window.innerWidth > 650)
+  const [width, setWidth] = useState(window.innerWidth)
 
   const propertyTypes = getPropertyTypes()
 
-  const updateMedia = (width) => {
-    setIsDesktop(true)
+  const handleWindowSizeChange = () => {
+    setWidth(window.innerWidth)
   }
 
   useEffect(() => {
-    const width = window.innerwidth
-    window.addEventListener('resize', updateMedia(width))
-    return () => window.removeEventListener('resize', updateMedia)
+    window.addEventListener('resize', handleWindowSizeChange)
+    return () => window.removeEventListener('resize', handleWindowSizeChange)
   })
 
   const handleClick = (e) => {
@@ -38,7 +38,7 @@ function PropertyTypesList() {
 
   return (
     <>
-      {isDesktop ? (
+      {width > 768 ? (
         <div className='tabs group text-secondary mt-20 mb-6 justify-stretch font-bold'>
           {propertyTypes.map((type) => (
             <div

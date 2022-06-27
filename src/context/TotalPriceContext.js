@@ -1,8 +1,9 @@
 import { createContext, useState } from 'react'
-import { getPricing } from '../data'
+import { getPricing, getPropertyTypes } from '../data'
 
 const TotalPriceContext = createContext()
 const roomPricing = getPricing()
+const propertyTypes = getPropertyTypes()
 
 export const PricingProvider = ({ children }) => {
   const [pricePackage, setPricePackage] = useState({
@@ -21,8 +22,17 @@ export const PricingProvider = ({ children }) => {
     setPricePackage(newPricePackage)
   }
 
+  const getPropertyTypeName = (type) => {
+    const FriendlyName = propertyTypes.filter((item) =>
+      item.dataId.includes(type)
+    )
+    return FriendlyName
+  }
+
   return (
-    <TotalPriceContext.Provider value={{ pricePackage, updatePricePackage }}>
+    <TotalPriceContext.Provider
+      value={{ pricePackage, updatePricePackage, getPropertyTypeName }}
+    >
       {children}
     </TotalPriceContext.Provider>
   )

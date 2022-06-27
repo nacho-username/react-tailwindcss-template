@@ -9,8 +9,9 @@ import {
 import { CheckIcon, CrossIcon } from './shared/CheckIcon'
 
 function PricingPlan() {
-  const { pricePackage } = useContext(TotalPriceContext)
+  const { pricePackage, getPropertyTypeName } = useContext(TotalPriceContext)
   const [totalPrice, setTotalPrice] = useState()
+  const [propertyType, setPropertyType] = useState(pricePackage.type)
 
   useEffect(() => {
     if (pricePackage.type !== 'campsite') {
@@ -27,6 +28,8 @@ function PricingPlan() {
       const getCampsitePricing = calculateCampsitePricing(pricePackage.numRooms)
       setTotalPrice(parseFloat(getCampsitePricing).toFixed(2))
     }
+    setPropertyType(getPropertyTypeName(pricePackage.type)[0].title)
+    console.log(propertyType)
   }, [pricePackage])
 
   return (
@@ -49,7 +52,7 @@ function PricingPlan() {
           PMS features. No credit card details required for sign up!
         </div>
         <div className='text-md text-bold text-lightgray mt-4 mb-8 italic'>
-          Features Tailored to {pricePackage.type.toUpperCase()}
+          Features Tailored to {propertyType}
         </div>
         <ul className=' flex flex-col space-y-5 w-full text-sm rounded-lg mt-2 mb-6 text-secondary'>
           <li className='flex mt-2 text-secondary'>
@@ -101,7 +104,7 @@ function PricingPlan() {
           PMS features. No credit card details required for sign up!
         </div>
         <div className='text-md text-bold text-white mt-4 mb-8 italic'>
-          Features Tailored to {pricePackage.type.toUpperCase()}
+          Features Tailored to {propertyType}
         </div>
         <ul className=' flex flex-col space-y-5 w-full text-sm rounded-lg mt-2 mb-6 text-white'>
           <li className='flex mt-2 text-white'>

@@ -13,7 +13,7 @@ function App() {
         <RoomNumInput />
         <PricingPlan />
       </div>
-      {/* <div className='bg-secondary min-h-[36rem] py-24 -mt-[22rem]'></div> */}
+      <div className='bg-secondary min-h-[36rem] py-24 -mt-[22rem]'></div>
     </>
   )
 }

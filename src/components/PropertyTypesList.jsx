@@ -42,19 +42,22 @@ function PropertyTypesList() {
   return (
     <>
       {width > 768 ? (
-        <div className='tabs group text-secondary mt-20 mb-6 justify-items-start font-bold'>
-          {propertyTypes.map((type) => (
-            <div
-              key={type}
-              data-prop-type={type.dataId}
-              className={`tab border-b border-gray-400 text-secondary text-sm md:text-md pb-10 pl-0 flex-1 transition ease-in-out delay-75 ${
-                pricePackage.type === type.dataId ? 'tab-active' : ''
-              }`}
-              onClick={handleClick}
-            >
-              {type.title}
-            </div>
-          ))}
+        <div className='text-sm font-medium text-left text-secondary cursor-pointer font-bold border-b mx-4 my-6 border-gray-400'>
+          <ul className='flex flex-wrap justify-between -mb-px'>
+            {propertyTypes.map((type) => (
+              <li key={type} className=''>
+                <a
+                  onClick={handleClick}
+                  data-prop-type={type.dataId}
+                  className={` ${
+                    pricePackage.type === type.dataId ? 'active' : ''
+                  } text-sm md:text-md inline-block py-4 rounded-t-lg border-b-2 border-transparent hover:text-primary hover:border-primary `}
+                >
+                  {type.title}
+                </a>
+              </li>
+            ))}
+          </ul>
         </div>
       ) : (
         <div className='flex justify-center mb-4'>

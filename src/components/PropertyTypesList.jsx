@@ -60,8 +60,8 @@ function PropertyTypesList() {
           </ul>
         </div>
       ) : (
-        <div className='flex justify-center mb-4'>
-          <select className='select w-96 select-secondary text-secondary'>
+        <div className='flex justify-center mb-6 mx-4'>
+          <select className='select w-full sm:w-96 select-secondary text-secondary'>
             <option onClick={handleClick} data-prop-type='bnb'>
               BnB / Guesthouse
             </option>

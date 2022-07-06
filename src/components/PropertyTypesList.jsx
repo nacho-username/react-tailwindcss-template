@@ -42,15 +42,14 @@ function PropertyTypesList() {
   return (
     <>
       {width > 768 ? (
-        <div className='tabs group text-secondary mt-20 mb-6 justify-stretch font-bold'>
+        <div className='tabs group text-secondary mt-20 mb-6 justify-items-start font-bold'>
           {propertyTypes.map((type) => (
             <div
               key={type}
               data-prop-type={type.dataId}
-              className={`tab border-b border-gray-400 text-secondary text-sm md:text-md pb-10 flex-1 transition ease-in-out delay-75 ${
+              className={`tab border-b border-gray-400 text-secondary text-sm md:text-md pb-10 pl-0 flex-1 transition ease-in-out delay-75 ${
                 pricePackage.type === type.dataId ? 'tab-active' : ''
               }`}
-              onMouseOver={handleClick}
               onClick={handleClick}
             >
               {type.title}

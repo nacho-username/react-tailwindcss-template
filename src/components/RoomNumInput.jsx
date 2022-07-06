@@ -22,14 +22,14 @@ function RoomNumInput() {
 
   const renderIncrementSteps = () => {
     let steps = []
-    for (let i = 1; i < 41; i++) {
+    for (let i = 1; i < 21; i++) {
       steps.push(<span className='text-lightgray invisible md:visible'>|</span>)
     }
     return steps
   }
 
   return (
-    <div className='w-2/3 mx-auto'>
+    <div className='w-full px-4 sm:w-2/3 mx-auto'>
       <label className='label w-32 mx-auto'>
         <span className='label-text mr-2 text-lightgray'>I have</span>
         <span className='label-text mr-2 text-primary text-center'>

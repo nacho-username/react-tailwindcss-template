@@ -33,8 +33,8 @@ function PricingPlan() {
   }, [pricePackage])
 
   return (
-    <div className='flex flex-col-reverse md:gap-24 mt-8 justify-between mx-12 sm:mx-2 sm:flex-row'>
-      <div className='sm:basis-1/2 md:basis-2/3 rounded-xl shadow-2xl p-12 z-10 bg-white'>
+    <div className='flex flex-col-reverse sm:gap-12 lg:gap-24 mt-8 justify-between mx-4 sm:mx-12 sm:mx-2 sm:flex-row'>
+      <div className='sm:basis-1/2 md:basis-2/3 rounded-xl shadow-2xl p-12 my-6 bg-white'>
         <div className='rounded-full bg-gray-100 uppercase text-primary text-sm font-medium px-3 py-1 inline'>
           14 day free trial
         </div>
@@ -92,7 +92,7 @@ function PricingPlan() {
         </div>
       </div>
 
-      <div className='sm:basis-1/2 md:basis-2/3 bg-gradient-to-br from-orange-400 to-primary p-12 rounded-xl !text-white shadow-2xl'>
+      <div className='sm:basis-1/2 md:basis-2/3 bg-gradient-to-br from-orange-400 to-primary p-12 my-6 rounded-xl !text-white shadow-2xl'>
         <div className='rounded-full bg-gray-100 uppercase text-primary text-sm font-medium px-3 py-1 inline'>
           Inn Style Member
         </div>

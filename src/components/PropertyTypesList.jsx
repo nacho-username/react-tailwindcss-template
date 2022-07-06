@@ -51,7 +51,7 @@ function PropertyTypesList() {
                   data-prop-type={type.dataId}
                   className={` ${
                     pricePackage.type === type.dataId ? 'active' : ''
-                  } text-sm md:text-md inline-block py-4 rounded-t-lg border-b-2 border-transparent hover:text-primary hover:border-primary `}
+                  } text-lg inline-block py-4 rounded-t-lg border-b-2 border-transparent hover:text-primary hover:border-primary `}
                 >
                   {type.title}
                 </a>

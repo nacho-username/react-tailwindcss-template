@@ -89,7 +89,7 @@ function PricingPlan() {
           See All Features
         </a>
         <div className='grid place-items-center my-10'>
-          <button className='py-4 px-8 text-xs sm:text-sm bg-gray-100 hover:scale-110 text-primary rounded-full transition delay-150 duration-200 ease-in-out w-full'>
+          <button className='py-4 px-8 text-xs sm:text-sm bg-gray-100 hover:scale-110 text-primary rounded-full transition delay-150 duration-150 ease-in-out w-full'>
             Start your <span className='font-bold'>14 day free trial</span>
           </button>
         </div>
@@ -144,7 +144,7 @@ function PricingPlan() {
           See All Features
         </a>
         <div className='grid place-items-center my-10'>
-          <button className='py-4 px-8 text-xs sm:text-sm bg-gray-100 hover:scale-110 text-primary rounded-full transition delay-150 duration-200 ease-in-out w-full'>
+          <button className='py-4 px-8 text-xs sm:text-sm bg-gray-100 hover:scale-110 text-primary rounded-full transition delay-150 duration-150 ease-in-out w-full'>
             Join The <span className='font-bold'>Inn Style Family</span>
           </button>
         </div>

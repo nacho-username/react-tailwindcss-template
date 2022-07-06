@@ -8,7 +8,7 @@ const propertyTypes = getPropertyTypes()
 export const PricingProvider = ({ children }) => {
   const [pricePackage, setPricePackage] = useState({
     plan: 'monthly',
-    numRooms: 1,
+    numRooms: 2,
     totalPrice: 19.95,
     roomPricing: roomPricing,
     type: 'bnb',

@@ -23,7 +23,7 @@ function Header() {
           Hello Affordable.
         </h1>
       </div>
-      <div className='mx-3 sm:mx-0'>
+      <div className='mx-3 w-full sm:mx-0'>
         <div className='form-control'>
           <label className='label cursor-pointer justify-end flex-row-reverse md:flex-row'>
             <span

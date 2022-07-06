@@ -52,8 +52,8 @@ function PricingPlan() {
           features. No card details required for sign up!
         </div>
         <div className='text-md text-regular text-gray-400 mt-4 mb-8'>
-          Features Tailored to{' '}
-          <span className='text-primary font-bold'>{propertyType}</span>
+          Features Tailored to
+          <span className='text-primary font-bold italic'> {propertyType}</span>
         </div>
         <ul className=' flex flex-col space-y-7 w-full text-sm rounded-lg mt-2 mb-6 text-secondary font-bold'>
           <li className='flex mt-2 text-secondary'>
@@ -107,8 +107,8 @@ function PricingPlan() {
           rate tailored to your accommodation needs.
         </div>
         <div className='text-md text-regular text-white mt-4 mb-8'>
-          Features Tailored to{' '}
-          <span className='text-white font-bold'>{propertyType}</span>
+          Features Tailored to
+          <span className='text-white font-bold italic'> {propertyType}</span>
         </div>
         <ul className=' flex flex-col space-y-7 w-full text-sm rounded-lg mt-2 mb-6 text-white font-bold'>
           <li className='flex mt-2 text-white'>

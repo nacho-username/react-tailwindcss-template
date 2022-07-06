@@ -15,15 +15,15 @@ function Header() {
 
   return (
     <div className='grid sm:grid-cols-2 md:grid-cols-3 gap-2 my-8'>
-      <div className='col-span-2 mx-8 sm:mx-0'>
+      <div className='col-span-2 w-full px-4'>
         <h4 className='text-primary text-lg font-bold sm:text-lg font-Lato uppercase'>
           Pricing Plans
         </h4>
-        <h1 className='text-secondary text-5xl sm:text-6xl font-Yeseva'>
+        <h1 className='text-secondary text-6xl font-Yeseva'>
           Hello Affordable.
         </h1>
       </div>
-      <div className='mx-6 sm:mx-0'>
+      <div className='mx-3 sm:mx-0'>
         <div className='form-control'>
           <label className='label cursor-pointer justify-end flex-row-reverse md:flex-row'>
             <span

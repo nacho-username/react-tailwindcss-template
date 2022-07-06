@@ -42,7 +42,7 @@ function PropertyTypesList() {
   return (
     <>
       {width > 768 ? (
-        <div className='text-sm font-medium text-left text-secondary cursor-pointer font-bold border-b mx-4 my-6 border-gray-400'>
+        <div className='text-sm font-medium text-left text-secondary cursor-pointer border-b mx-4 my-6 border-gray-400'>
           <ul className='flex flex-wrap justify-between -mb-px'>
             {propertyTypes.map((type) => (
               <li key={type} className=''>
@@ -51,7 +51,7 @@ function PropertyTypesList() {
                   data-prop-type={type.dataId}
                   className={` ${
                     pricePackage.type === type.dataId ? 'active' : ''
-                  } text-lg inline-block py-4 rounded-t-lg border-b-2 border-transparent hover:text-primary hover:border-primary `}
+                  } text-lg inline-block py-4 rounded-t-lg font-bold border-b-2 border-transparent hover:text-primary hover:border-primary `}
                 >
                   {type.title}
                 </a>

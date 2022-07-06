@@ -11,6 +11,7 @@ export function calculateCampsitePricing(numRooms) {
   } else if (numRooms > 49 && numRooms < 75) {
     return (campsiteTotalPrice = 75.0)
   } else {
+    // eslint-disable-next-line no-unused-vars
     return (campsiteTotalPrice = 100.0)
   }
 }

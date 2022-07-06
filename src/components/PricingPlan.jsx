@@ -30,7 +30,14 @@ function PricingPlan() {
     }
     setPropertyType(getPropertyTypeName(pricePackage.type)[0].title)
     console.log(propertyType)
-  }, [pricePackage])
+  }, [
+    pricePackage.type,
+    pricePackage.roomPricing,
+    pricePackage.numRooms,
+    pricePackage.plan,
+    getPropertyTypeName,
+    propertyType,
+  ])
 
   return (
     <div className='flex flex-col-reverse sm:gap-12 lg:gap-24 mt-8 justify-between mx-4 sm:mx-12 sm:mx-2 sm:flex-row'>

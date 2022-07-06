@@ -14,7 +14,7 @@ function Header() {
   }
 
   return (
-    <div className='grid sm:grid-cols-2 md:grid-cols-3 gap-2 my-8'>
+    <div className='grid sm:grid-cols-2 md:grid-cols-3 gap-2 mt-8 mb-20'>
       <div className='col-span-2 w-full px-4'>
         <h4 className='text-primary text-lg font-bold sm:text-lg font-Lato uppercase'>
           Pricing Plans

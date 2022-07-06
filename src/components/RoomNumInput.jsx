@@ -1,11 +1,9 @@
 import { useContext, useState, useEffect } from 'react'
-import TotalPriceContext, { PricingPackage } from '../context/TotalPriceContext'
-import { calculateCampsitePricing } from '../utilities/helpers'
+import TotalPriceContext from '../context/TotalPriceContext'
 
 function RoomNumInput() {
   const { pricePackage, updatePricePackage } = useContext(TotalPriceContext)
   const [roomNum, setRoomNum] = useState(pricePackage.numRooms)
-  const [unit, setUnit] = useState('room')
 
   useEffect(() => {
     setRoomNum(pricePackage.numRooms)

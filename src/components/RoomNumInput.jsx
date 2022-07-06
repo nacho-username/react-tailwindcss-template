@@ -29,7 +29,7 @@ function RoomNumInput() {
   }
 
   return (
-    <div className='w-full px-4 sm:w-2/3 mx-auto'>
+    <div className='w-full px-4 my-8 sm:w-2/3 mx-auto'>
       <label className='label w-32 mx-auto'>
         <span className='label-text mr-2 text-lightgray'>I have</span>
         <span className='label-text mr-2 text-primary text-center'>

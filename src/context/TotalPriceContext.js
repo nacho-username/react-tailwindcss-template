@@ -13,7 +13,7 @@ export const PricingProvider = ({ children }) => {
         { iframeHeight: document.body.scrollHeight },
         '*'
       )
-    }, 200)
+    }, 300)
   }, [])
 
   const [pricePackage, setPricePackage] = useState({

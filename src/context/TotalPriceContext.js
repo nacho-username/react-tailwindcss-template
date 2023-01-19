@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { createContext, useState } from 'react'
 import { getPricing, getPropertyTypes } from '../data'
 
@@ -6,6 +7,15 @@ const roomPricing = getPricing()
 const propertyTypes = getPropertyTypes()
 
 export const PricingProvider = ({ children }) => {
+  useEffect(() => {
+    setTimeout(() => {
+      window.parent.postMessage(
+        { iframeHeight: document.body.scrollHeight },
+        '*'
+      )
+    }, 200)
+  }, [])
+
   const [pricePackage, setPricePackage] = useState({
     plan: 'monthly',
     numRooms: 1,
